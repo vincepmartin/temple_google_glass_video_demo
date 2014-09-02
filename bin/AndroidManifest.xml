@@ -1,0 +1,52 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="org.temple.glassuielements"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="19"
+        android:targetSdkVersion="19" />
+
+   <uses-permission android:name="com.google.android.glass.permission.DEVELOPMENT" />    
+    
+   <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_app"
+        android:label="@string/app_name" >
+
+        <activity
+            android:name="org.temple.glassuielements.MenuActivity"
+            android:label="@string/app_name"
+            android:enabled="true" >
+        </activity>
+        
+        <activity
+            android:name="org.temple.glassuielements.GlassStyledCardActivity"
+            android:label="@string/app_name"
+            android:enabled="true" >
+        </activity>
+        
+        
+        <activity
+            android:name="org.temple.glassuielements.BasicVideoCaptureActivity"
+            android:label="@string/app_name"
+            android:enabled="true" >
+        </activity>
+        
+                
+        <service
+            android:name="org.temple.glassuielements.AppService"
+            android:icon="@drawable/ic_app"
+            android:label="@string/app_name"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.google.android.glass.action.VOICE_TRIGGER" />
+            </intent-filter>
+            <meta-data
+                android:name="com.google.android.glass.VoiceTrigger"
+                android:resource="@xml/voice_trigger_start" />
+        </service>
+    </application>
+
+</manifest>
